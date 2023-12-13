@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    ul li {
+      list-style: none;
+      font-size: 20px;
+      margin: 20px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 20px;
+      transition: 0.5s;
+      background-color: lightgreen;
+      color: white;
+      display: inline-block;
+    }
+    li:hover {
+      background-color: rgb(194, 228, 194);
+      color: black;
+    }
+    span {
+      background-color: rgb(194, 228, 194);
+      border-radius: 20px;
+      transition: 0.5s;
+      padding: 5px 20px;
+      font-size: 25px;
+    }
+    span:hover {
+      background-color: lightgreen;
+      color: white;
+    }
+  </style>
+  <body>
+    <div style="text-align: center">
+      <span
+        onmouseenter="showDropDown();clearTimeout(ddTimeout1)"
+        onmouseleave="ddTimeout=setTimeout(hideDropDown,2000)"
+        >show dropdown</span
+      >
+      <ul
+        id="dropdown"
+        style="display: none"
+        onmouseenter="clearTimeout(ddTimeout)"
+        onmouseleave="ddTimeout1=setTimeout(hideDropDown,2000)"
+      >
+        <li>home</li>
+        <li>about us</li>
+        <li>log in</li>
+        <li>call me</li>
+      </ul>
+    </div>
+    <script>
+      let showDropDown = () => {
+        document.getElementById("dropdown").style.display = "block";
+      };
+      let hideDropDown = () => {
+        document.getElementById("dropdown").style.display = "none";
+      };
+    </script>
+  </body>
+</html>
